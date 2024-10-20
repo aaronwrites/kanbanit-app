@@ -107,7 +107,8 @@ h1, h2 {
     border-radius: 10px;
     border: none;
     padding: .6rem;
-    font-weight: bold;
+    /* font-weight: bold; */
+    font-family: 'Bowlby One';
 }
 
 .sub {
@@ -116,32 +117,6 @@ h1, h2 {
 
 .signin {
     color: #CD1DE4;
-}
-
-@media (max-width: 1440px) {
-    html {
-        font-size: 12px;
-    }
-    body {
-        grid-template-columns: 1fr;
-    }
-    .right-illustration {
-        display: none;
-    }
-
-    .left {
-        width: 90vw;
-        height: 90vh;
-        max-width: 500px;
-    }
-    .input > input {
-        width: 90%;
-        padding-right: 3.3rem;
-    }
-    .input > i {
-        top: 1.3rem;
-        right: 2.5rem;
-    }
 }
 
 .toast-popup {
@@ -207,5 +182,34 @@ h1, h2 {
 @keyframes progress {
     100% {
         width: 0%;
+    }
+}
+
+
+@media (max-width: 1440px) {
+    html {
+        font-size: 13px;
+    }
+    body {
+        grid-template-columns: 1fr;
+    }
+    .right-illustration {
+        display: none;
+    }
+    .sub {
+        font-size: 0.9rem;
+    }
+    .left {
+        width: 90vw;
+        height: 90vh;
+        max-width: 500px;
+    }
+    .input > input {
+        width: 90%;
+        padding-right: 3.3rem;
+    }
+    .input > i {
+        top: 1.3rem;
+        right: 2.5rem;
     }
 }
