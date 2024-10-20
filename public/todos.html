@@ -20,10 +20,9 @@
                 <form class="todo-form" method="post" onsubmit="createTodo(event)">
                     <h2></h2>
                     <input type="text" placeholder="Enter the Task Name" id="todo-title" required>
-                    <input type="date" placeholder="Enter The Due Date of the Task" id="todo-due" name="due-date" required>
-
+                    <input type="date" placeholder="Select The Due Date" id="todo-due" name="due-date" required>
                     <select id="status" required>
-                        <option disabled selected>Select the status</option>
+                        <option value="" disabled selected>What's the status?</option>
                         <option value="Not Started">Not Started</option>
                         <option value="Pending">Pending</option>
                         <option value="Completed">Completed</option>
