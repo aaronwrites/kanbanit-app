@@ -51,6 +51,7 @@
             window.location.href = "/user/mytodos";
         } catch (error) {
             console.error("Error:", error);
+            toast(error.response)
         }
     }
     function toast(response) {
