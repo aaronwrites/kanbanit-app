@@ -188,7 +188,7 @@ h1, h2 {
 
 @media (max-width: 1440px) {
     html {
-        font-size: 13px;
+        font-size: 12px;
     }
     body {
         grid-template-columns: 1fr;
@@ -197,7 +197,7 @@ h1, h2 {
         display: none;
     }
     .sub {
-        font-size: 0.9rem;
+        font-size: 0.95rem;
     }
     .left {
         width: 90vw;
