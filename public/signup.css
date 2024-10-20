@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bowlby+One&display=swap');
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+    margin: 0;
+}
+
+h1, h2 {
+    margin: 0;
+}
+
+.logo {
+    font-family: 'Bowlby One';
+    /* margin: 1rem; */
+}
+
+.dot {
+    color: #CD1DE4;
+}
+
+.signup-container {
+    font-family: 'Bowlby One';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#signup {
+
+    width: 100%;
+
+}
+
+.left {
+    border: 1px solid #cdcfd0;
+    padding: 3rem;
+    width: 70%;
+    text-align: center;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    border-radius: 15px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    /* background-color: rgba(255,255,255,0.4); */
+    background: linear-gradient(90deg, rgba(93,220,255,0.2) 0%, rgba(199,0,255,0.2) 71%);
+    backdrop-filter: blur(20px);
+}
+
+
+.title, .input {
+    margin: 1.7rem;
+}
+
+.right-illustration {
+    height: 100vh;
+}
+
+.right {
+    text-align: right;
+    margin: 0;
+    padding: 0;
+}
+
+.input {
+    position: relative;
+
+}
+
+.input-wrapper{
+    max-width: 500px;
+    margin: 0 auto;
+
+}
+.input > input {
+    font-family: 'Inter';
+    width: 80%;
+    padding: 1rem 2.5rem 1rem 1rem;
+    border-radius: 100px;
+    border: 1px solid #cdcfd0;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    max-width: 400px;
+}
+
+.input > input:focus {
+    outline: none;
+    border: 1px solid #CD1DE4;
+}
+
+.input > i {
+    position: absolute;
+    top: 1rem;
+    right: 4rem;
+}
+
+.submit-btn {
+    margin: 1.7rem;
+    width: 70%;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    padding: .6rem;
+    font-weight: bold;
+}
+
+.sub {
+    font-size: .7rem;
+}
+
+.signin {
+    color: #CD1DE4;
+}
+
+@media (max-width: 1440px) {
+    html {
+        font-size: 12px;
+    }
+    body {
+        grid-template-columns: 1fr;
+    }
+    .right-illustration {
+        display: none;
+    }
+
+    .left {
+        width: 90vw;
+        height: 90vh;
+        max-width: 500px;
+    }
+    .input > input {
+        width: 90%;
+        padding-right: 3.3rem;
+    }
+    .input > i {
+        top: 1.3rem;
+        right: 2.5rem;
+    }
+}
+
+.toast-popup {
+    position: absolute;
+    top: 3rem ;
+    right: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    overflow: hidden;
+    padding: 1.2rem;
+    z-index: 10;
+}
+
+.toast {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background: white;
+    border: 1px solid #cdcfd0;
+    border-radius: 7px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    height: 5rem;
+    width: 20rem;
+    margin: 1rem 0;
+    padding: 0 1rem 0 .5rem;
+    position: relative;
+    transform: translateX(100%);
+    animation: animatee .5s linear forwards;
+    word-wrap: break-word;
+    word-break: break-all;
+
+}
+
+@keyframes animatee {
+    100% {
+        transform: translateX(0);
+    }
+}
+.toast > i {
+    margin: 0 1rem;
+}
+
+.toast::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    border-radius: 7px;
+    animation: progress 2s linear forwards;
+}
+
+.toast.success::after {
+    background-color: #4BB543;
+}
+
+.toast.error::after {
+    background-color: #cd2323;
+}
+
+@keyframes progress {
+    100% {
+        width: 0%;
+    }
+}

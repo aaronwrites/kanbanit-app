@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E2E</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.7/axios.min.js"></script>
+    <script src="https://kit.fontawesome.com/ef8e821ed1.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/signup.css">
+</head>
+<body>
+    <div class="toast-popup">
+            
+    </div>
+    <div class="signup-container">
+        <div class="left">
+            <h1 class="logo">KANBANIT<span class="dot">.</span></h1>
+            <form id="signup" onsubmit="signUp(event)" method="post">
+                <div class="title">
+                    <h2>Create an Account</h2>
+                </div>
+                <div class="input-wrapper">
+                    <div class="input name"><input type="text" id="name-su" placeholder="Enter Your Name" required><i class="fa-solid fa-user"></i></div>
+                    <div class="input email"><input type="email" name="email" id="email-su" placeholder="Enter your email address" required><i class="fa-solid fa-envelope"></i></div>
+                    <div class="input password"><input type="password" name="pass" id="password-su" placeholder="Enter your Password" minlength="8" required><i class="fa-solid fa-lock"></i></div>
+                </div>
+                <button type="submit" class="submit-btn">Sign Up<i class="fa-solid fa-arrow-right" style="color: #ffffff; margin-left: .5rem"></i></button>
+                <p class="sub">Already have an account? <a href="/user/signin" class="signin">Sign In</a></p>
+            </form>
+        </div>
+    </div>
+    <div class="right">
+        <img src="/Sign Up Illustration.svg " class="right-illustration" alt="">
+    </div>
+
+</body>
+<script>
+    async function signUp(event) {
+        event.preventDefault();
+        const name = document.getElementById("name-su").value;
+        const email = document.getElementById("email-su").value;
+        const password = document.getElementById("password-su").value;
+
+    try {
+        const response = await axios.post("/user/signup", {
+            name,
+            email,
+            password
+        });
+        alert(`${response.data} Please Sign IN to Continue`);
+        window.location.href = "/user/signin"
+    } catch (error) {
+        console.error("Error:", error.response);
+        toast(error.response)
+    }
+    }
+    function toast(response) {
+    const popupDiv = document.querySelector('.toast-popup');
+    const toastNotify = document.createElement('div');
+    toastNotify.classList.add('toast');
+    if (response.status === 200 || response.status ===201) {
+        toastNotify.classList.add('success');
+        toastNotify.innerHTML = `<i class="fa-solid fa-circle-check fa-xl" style="color: #4BB543;"></i>${response.data}`;
+    }
+    else {
+        toastNotify.classList.add('error');
+        toastNotify.innerHTML = `<i class="fa-solid fa-circle-exclamation fa-xl" style="color: #cd2323;"></i>${response.data}`;
+    }
+    popupDiv.appendChild(toastNotify);
+    setTimeout(() => {
+        popupDiv.removeChild(toastNotify);
+    }, 2000);
+}
+</script>
+</html>

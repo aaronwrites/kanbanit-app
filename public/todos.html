@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todos</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="/todostyles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.7/axios.min.js"></script>
+    <script src="https://kit.fontawesome.com/ef8e821ed1.js" crossorigin="anonymous"></script>
+    <script src="/script.js" defer></script>
+</head>
+<body>
+    <main>
+        <div class="todo-popup-container">
+            <div class="todo-popup-box">
+                <form class="todo-form" method="post" onsubmit="createTodo(event)">
+                    <h2></h2>
+                    <input type="text" placeholder="Enter the Task Name" id="todo-title" required>
+                    <input type="date" placeholder="Enter The Due Date of the Task" id="todo-due" name="due-date" required>
+
+                    <select id="status" required>
+                        <option disabled selected>Select the status</option>
+                        <option value="Not Started">Not Started</option>
+                        <option value="Pending">Pending</option>
+                        <option value="Completed">Completed</option>
+                    </select>
+                    <div class="btns">
+                        <button type="button" class="cancel-todo-btn" onclick="closeTodoPopup()">Cancel</button>
+                        <button type="submit" class="add-todo-btn">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <nav class="navbar">
+            <h3 class="logo">KANBANIT<span class="dot">.</span></h3>
+            <div class="icon github"><a href="https://github.com/aaronwrites"><i class="fa-brands fa-github fa-xl"></a></i></div>
+            <div class="icon twitter"><a href="https://x.com/aaronnn_h"><i class="fa-brands fa-x-twitter fa-xl"></i></a></div>
+            <div class="icon logout"><i class="fa-solid fa-arrow-right-from-bracket fa-xl" style="color: #e01a1a; cursor: pointer;" onclick="logout()"></i></div>
+        </nav>
+        <div class="greetings" style="margin: 7rem 0 2rem 0;">
+            <h2 class="greeting">
+                
+            </h2>
+        </div>
+        <div class="dates">
+            <div class="date-wrapper all focused" style="width: 3.7rem; text-align: center;">
+                <div class="date" style="font-size: .9rem; font-weight: 500;">
+                    All Todos
+                </div>
+            </div>
+        </div>
+        <div class="toast-popup">
+            
+        </div>
+        <div class="board">
+            <div class="kanban-columns ns">
+                <div class="title">
+                    <div class="header-info">
+                        <i class="fa-solid fa-bullseye" style="color: #165eda; margin-right: 7px;"></i>
+                        <h5>Todo</h5>
+                    </div>
+                    <div class="add-todo">
+                        <button class="add-todo" onclick="openTodoPopup('add')"><i class="fa-solid fa-circle-plus" style="color: #000000;"></i></button>
+                    </div>
+                </div>
+                <div class="tasks">
+                </div>
+            </div>
+            <div class="kanban-columns ip">
+                <div class="title">
+                    <div class="header-info">
+                        <i class="fa-solid fa-bars-progress" style="color: #F97315; margin-right: 7px;"></i>
+                        <h5>In Progress</h5>
+                    </div>
+                    <div class="add-todo">
+                        <button class="add-todo" onclick="openTodoPopup('add')"><i class="fa-solid fa-circle-plus" style="color: #000000;"></i></button>
+                    </div>
+                </div>
+                <div class="tasks">
+                </div>
+            </div>
+            <div class="kanban-columns cp">
+                <div class="title">
+                    <div class="header-info">
+                        <i class="fa-solid fa-check-double" style="color: #21BF5B; margin-right: 7px;"></i>
+                        <h5>Completed</h5>
+                    </div>
+                    <div class="add-todo">
+                        <button class="add-todo" onclick="openTodoPopup('add')"><i class="fa-solid fa-circle-plus" style="color: #000000;"></i></button>
+                    </div>
+                </div>
+                <div class="tasks">
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-logo">
+            <h3 class="logo">KANBANIT<span class="dot">.</span></h3>
+        </div>
+        <div class="footer-info">
+            Crafted with ❤️ by Aaron H
+        </div>
+        <div class="footer-icons">
+            <div class="icon github"><a href="https://github.com/aaronwrites"><i class="fa-brands fa-github fa-xl" style="color: aliceblue; cursor: pointer;"></a></i></div>
+            <div class="icon twitter"><a href="https://x.com/aaronnn_h"><i class="fa-brands fa-x-twitter fa-xl" style="color: aliceblue; cursor: pointer;"></i></a></div>
+        </div>
+    </footer>
+</body>
+</html>
