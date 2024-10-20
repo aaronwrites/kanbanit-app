@@ -27,7 +27,10 @@ The following technologies are used in Kanbanit:
 - **Frontend**: HTML, CSS, JavaScript
 - **Backend**: Node.js, Express.js
 - **Database**: MongoDB
+- **Deployment**: Render (Backend), Framer (Landing Page - Frontend)
 - **Other Tools**: Axios, JWT for authentication
+
+**The Site is Deployed on Render's free tier, Hence the backend might be slow at times.
 
 ## Project Setup
 
