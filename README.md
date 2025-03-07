@@ -12,8 +12,7 @@ Kanbanit is a kanban-style task management app designed to help you effortlessly
 - [License](#license)
 
 <img width="1904" alt="Screenshot 2025-03-07 at 6 20 27 PM" src="https://github.com/user-attachments/assets/117edcc9-dbe5-4fe5-b4c4-1aefaeca5811" />
-![kanbanit](https://github.com/user-attachments/assets/d5c0f6bb-6f12-4621-95e3-7d3d8db5d814)
-
+<img width="1904" alt ="KanbanIt" src="https://github.com/user-attachments/assets/d5c0f6bb-6f12-4621-95e3-7d3d8db5d814" />
 
 
 ## Features
